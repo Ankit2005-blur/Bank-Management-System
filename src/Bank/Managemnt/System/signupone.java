@@ -3,14 +3,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.*;
 
-public class signupone extends JFrame{
-
+public class signupone extends JFrame implements ActionListener{
+    JButton next;
     signupone()
     {
         Random run=new Random();
         Long random=Math.abs((run.nextLong()%9000L)+1000L);
-        JLabel formno=new JLabel("APPLICATION FORM NO."+random);
+        JLabel formno=new JLabel("APPLICATION FORM NO. "+random);
         formno.setBounds(110,-80,500,300);
         formno.setFont(new Font("Oswald",Font.BOLD,20));
         add(formno);
@@ -157,6 +158,14 @@ public class signupone extends JFrame{
         statetextfield.setFont(new Font("Oswald",Font.BOLD,15));
         add(statetextfield);
 
+        next=new JButton("Next");
+        next.setBounds(180,550,150,20);
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.WHITE);
+        next.addActionListener(this);
+        add(next);
+
+
 
         getContentPane().setBackground(Color.white);
         setSize(500,750);
@@ -167,6 +176,13 @@ public class signupone extends JFrame{
 
 
 
+    }
+    public void actionPerformed(ActionEvent ae)
+    {
+        if(ae.getSource()==next)
+        {
+
+        }
     }
     public static void main(String args[])
     {
